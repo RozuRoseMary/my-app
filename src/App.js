@@ -3,17 +3,32 @@ import "./App.css";
 function App(props) {
   return (
     <div className="App">
-      <select
-        name="countries"
-        id="countries"
-        onChange={(event) => console.log(event.target.value)}
-      >
-        <option value="thailand">Thailand</option>
-        <option value="japan">japan</option>
-        <option value="korea">Korea</option>
-        <option value="canada">Canada</option>
-        <option value="austria">Austria</option>
-      </select>
+      {/* box1 */}
+      <input
+        type="checkbox"
+        name="phoneBrand"
+        value="apple"
+        onClick={(event) => console.log(event.target.value)}
+      />
+      <label htmlFor="apple">Apple</label>
+      <br />
+      {/* box2 */}
+      <input
+        type="checkbox"
+        name="phoneBrand"
+        value="huawei"
+        onClick={(event) => console.log(event.target.value)}
+      />
+      <label htmlFor="huawei">Huawei</label>
+      <br />
+      {/* box3 */}
+      <input
+        type="checkbox"
+        name="phoneBrand"
+        value="samsung"
+        onClick={(event) => console.log(event.target.value)}
+      />
+      <label htmlFor="samsung">Samsung</label>
     </div>
   );
 }

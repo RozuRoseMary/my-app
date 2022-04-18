@@ -2,31 +2,51 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-  const [friend, setFriend] = useState([
-    "Earn",
-    "Tarn",
-    "Meriam",
-    "Peach",
-    "Tao",
-    "Well",
+  const [posted, setPosted] = useState([
+    {
+      id: 1,
+      message: "ภำมากนะ",
+      date: "18-04-2022",
+      name: "Tarn",
+    },
+    {
+      id: 2,
+      message: "หัวจะปวด",
+      date: "18-04-2022",
+      name: "Meriam",
+    },
+    {
+      id: 3,
+      message: "อิอิ",
+      date: "18-04-2022",
+      name: "Peach",
+    },
+    {
+      id: 4,
+      message: "เส้าแท้",
+      date: "18-04-2022",
+      name: "Well",
+    },
+    {
+      id: 5,
+      message: "คถ.จัง",
+      date: "18-04-2022",
+      name: "Tao",
+    },
   ]);
 
+  console.log(posted);
   return (
     <div className="App">
-      {friend.map((el, idx) => (
-        <div key={idx}>
-          <p>My friends : </p>
-          <FriendCard name={el} />
-        </div>
-      ))}
-    </div>
-  );
-}
+      <h1>Hard code</h1>
+      {posted[0].message}
 
-function FriendCard(props) {
-  return (
-    <div style={{ border: "1px solid blue", margin: "1rem", padding: "1rem" }}>
-      {props.name}
+      <h1>arr.map</h1>
+      {posted.map((key) => (
+        <div>{key.message}</div>
+      ))}
+
+      {/* <h1>for loop</h1> */}
     </div>
   );
 }

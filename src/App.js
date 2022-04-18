@@ -38,15 +38,53 @@ function App() {
   console.log(posted);
   return (
     <div className="App">
-      <h1>Hard code</h1>
-      {posted[0].message}
+      <h1
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          color: "#fff",
+          background: "#000",
+        }}
+      >
+        arr.map
+      </h1>
+      {posted.map((item, idx) => {
+        return (
+          <div
+            key={idx}
+            style={{
+              border: "1px solid blue",
+              margin: "1rem",
+              padding: "1rem",
+            }}
+          >
+            <h2>{item.message}</h2>
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <span>{item.name}</span>
+              <span>{item.date}</span>
+            </div>
+          </div>
+        );
+      })}
 
-      <h1>arr.map</h1>
-      {posted.map((key) => (
-        <div>{key.message}</div>
-      ))}
+      {/* {posted.map((el, idx) => (
+        <div key={idx}>
+          <PostedList message={el} name={el} date={el} />
+        </div>
+      ))} */}
+    </div>
+  );
+}
 
-      {/* <h1>for loop</h1> */}
+function PostedList(props) {
+  return (
+    <div style={{ border: "1px solid blue", margin: "1rem", padding: "1rem" }}>
+      <h1>{props.message}</h1>
+      <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+        <p>{props.name}</p>
+        <p>{props.date}</p>
+        console.log(props.message)
+      </div>
     </div>
   );
 }
